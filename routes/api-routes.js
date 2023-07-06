@@ -1,10 +1,18 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
+const Note = require("../models")
 
 
-router.get('/notes', (req, res) => {
+router.get('/notes', async (req, res) => {
+    try {
+        const noteData = await Note.findAll();
+        res.status(200).json(noteData);
 
-res.json({ message: 'Get all notes' });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+
+
+    // res.json({ message: 'Get all notes' });
 });
 
 router.post('/notes', (req, res) => {
