@@ -3,14 +3,14 @@ const mysql = require('mysql2');
 const connection = require('./connection');
 
 const app = express();
-const port = 3000;
+const port = 5500;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Route for serving the index.html file
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + './index.html');
     });
     
     app.post('/notes', (req, res) => {
@@ -29,3 +29,5 @@ app.get('/', (req, res) => {
     app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
     });
+
+    module.exports = app;
