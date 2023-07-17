@@ -15,3 +15,13 @@ console.log('Connected to the database note_tracker.');
 });
 
 module.exports = connection;
+
+connection.query('SELECT 1', (error, results) => {
+    if (error) {
+    console.error('Error executing test query:', error);
+    return;
+    }
+    
+    console.log('Connection test successful.');
+    });
+    
