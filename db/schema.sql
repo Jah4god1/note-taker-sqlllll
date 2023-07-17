@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS note_taker; 
-CREATE DATABASE note_taker;
